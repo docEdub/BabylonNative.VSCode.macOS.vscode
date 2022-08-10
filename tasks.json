@@ -17,6 +17,29 @@
 			}
 		},
 		{
+			"label": "iOS CMake",
+			"command": "cmake",
+			"args": [
+				"-B",
+				"build/iOS",
+				"-G",
+				"Xcode",
+				"-D",
+				"CMAKE_TOOLCHAIN_FILE=Dependencies/ios-cmake/ios.toolchain.cmake",
+				"-D",
+				"PLATFORM=OS64COMBINED",
+				"-D",
+				"ENABLE_ARC=0",
+				"-D",
+				"DEPLOYMENT_TARGET=12"
+			],
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			}
+		},
+		{
 			"label": "macOS Playground",
 			"dependsOn": "macOS CMake",
 			"command": "xcodebuild",
@@ -32,6 +55,31 @@
 				"kind": "build",
 				"isDefault": true
 			}
+		},
+		{
+			"label": "iOS Playground",
+			"dependsOn": "iOS CMake",
+			"command": "xcodebuild",
+			"args": [
+				"-project",
+				"build/iOS/BabylonNative.xcodeproj",
+				"-scheme",
+				"Playground",
+				"build",
+				"-sdk",
+				"iphonesimulator"
+			],
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "iOS Playground Simulator",
+			"type": "shell",
+			"command": "open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app --args \"-CurrentDeviceUDID AE926489-5925-46A1-AE45-2B481ED4C36C\" && sleep 10 && xcrun simctl install booted ${workspaceFolder}/build/iOS/Apps/Playground/Debug-iphonesimulator/Playground.app && xcrun simctl launch booted com.BabylonNative.Playground.iOS",
+			"problemMatcher": [],
 		}
 	]
 }

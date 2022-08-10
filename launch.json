@@ -18,6 +18,24 @@
             "osx": {
                 "MIMode": "lldb"
             }
+        },
+        {
+            "name": "iOS Playground",
+            "preLaunchTask": "iOS Playground Simulator",
+            "type": "cppdbg",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/build/macOS/Apps/Playground/Debug/Playground.app",
+            "osx": {
+                "MIMode": "lldb",
+                "targetArchitecture": "arm64",
+            },
+            "customLaunchSetupCommands": [
+                {
+                    "text": "-target-attach -n Playground", "description": "Attach to Playground", "ignoreFailures": false
+                }
+            ],
+            "launchCompleteCommand": "exec-continue"
         }
     ]
 }
