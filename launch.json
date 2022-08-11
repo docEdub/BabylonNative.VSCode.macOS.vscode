@@ -19,15 +19,35 @@
                 "MIMode": "lldb"
             }
         },
+
+        // The following configurations require the iOS Debug extension by Nisarg Jhaveri.
+        // See https://marketplace.visualstudio.com/items?itemName=nisargjhaveri.ios-debug.
+        // Change iosBundleId to the id you use for development and change it in the "iOS CMake" task in tasks.json, too.
+        // Change iosTarget to true to select the device/simulator each time this configuration is started, or set it to a target id.
+        // To find an id for iosTarget:
+        //  - Open the VS Code output panel and select iOS Debug from its dropdown menu.
+        //  - Press the "iPhone" or "iPad" button on the left side of the status bar.
+        //  - Select the device/simulator in the dropdown menu that appears at the top of VS Code.
+        //  * The selected device's id should be logged in VS Code's output panel.
         {
-            "name": "iOS Playground",
-            "preLaunchTask": "iOS Playground Simulator",
+            "name": "iOS Playground (Simulator)",
+            "preLaunchTask": "iOS Playground (Simulator)",
             "type": "lldb",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "program": "${workspaceFolder}/build/iOS/Apps/Playground/Debug-iphonesimulator/Playground.app",
             "iosBundleId": "com.BabylonNative.Playground.iOS.Andy",
-            "iosTarget": "last-selected",
+            "iosTarget": "AE926489-5925-46A1-AE45-2B481ED4C36C",
+        },
+        {
+            "name": "iOS Playground (Device)",
+            "preLaunchTask": "iOS Playground (Device)",
+            "type": "lldb",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/build/iOS/Apps/Playground/Debug-iphoneos/Playground.app",
+            "iosBundleId": "com.BabylonNative.Playground.iOS.Andy",
+            "iosTarget": "00008101-000935CE0E43001E",
         }
     ]
 }

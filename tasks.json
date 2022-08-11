@@ -31,7 +31,18 @@
 				"-D",
 				"ENABLE_ARC=0",
 				"-D",
-				"DEPLOYMENT_TARGET=12"
+				"DEPLOYMENT_TARGET=12",
+
+				// Setup provisioning in Xcode for any project at least once, and then look for this value in the text of one of the files in ~/Library/MobileDevice/Provisioning Profiles.
+				"-D",
+				"CMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM=FPH36HBUH6",
+
+				// This needs to match the iosBundleId key in launch.json.
+				"-D",
+				"BABYLON_NATIVE_PLAYGROUND_IOS_PRODUCT_BUNDLE_IDENTIFIER=com.BabylonNative.Playground.iOS.Andy",
+
+				"-D",
+				"BABYLON_NATIVE_VALIDATION_TESTS_IOS_PRODUCT_BUNDLE_IDENTIFIER=com.BabylonNative.ValidationTests.iOS.Andy"
 			],
 			"problemMatcher": [],
 			"group": {
@@ -57,7 +68,7 @@
 			}
 		},
 		{
-			"label": "iOS Playground",
+			"label": "iOS Playground (Simulator)",
 			"dependsOn": "iOS CMake",
 			"command": "xcodebuild",
 			"args": [
@@ -76,10 +87,24 @@
 			}
 		},
 		{
-			"label": "iOS Playground Simulator",
-			"type": "shell",
-			"command": "open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app --args \"-CurrentDeviceUDID AE926489-5925-46A1-AE45-2B481ED4C36C\" && sleep 10 && xcrun simctl install booted ${workspaceFolder}/build/iOS/Apps/Playground/Debug-iphonesimulator/Playground.app && xcrun simctl launch booted com.BabylonNative.Playground.iOS",
+			"label": "iOS Playground (Device)",
+			"dependsOn": "iOS CMake",
+			"command": "xcodebuild",
+			"args": [
+				"-project",
+				"build/iOS/BabylonNative.xcodeproj",
+				"-scheme",
+				"Playground",
+				"build",
+				"-sdk",
+				"iphoneos",
+				"-allowProvisioningUpdates"
+			],
 			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
 		}
 	]
 }
