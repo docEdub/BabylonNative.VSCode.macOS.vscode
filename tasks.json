@@ -5,10 +5,8 @@
 			"label": "macOS CMake",
 			"command": "cmake",
 			"args": [
-				"-B",
-				"build/macOS",
-				"-G",
-				"Xcode"
+				"-B", "build/macOS",
+				"-G", "Xcode"
 			],
 			"problemMatcher": [],
 			"group": {
@@ -20,29 +18,19 @@
 			"label": "iOS CMake",
 			"command": "cmake",
 			"args": [
-				"-B",
-				"build/iOS",
-				"-G",
-				"Xcode",
-				"-D",
-				"CMAKE_TOOLCHAIN_FILE=Dependencies/ios-cmake/ios.toolchain.cmake",
-				"-D",
-				"PLATFORM=OS64COMBINED",
-				"-D",
-				"ENABLE_ARC=0",
-				"-D",
-				"DEPLOYMENT_TARGET=12",
+				"-B", "build/iOS",
+				"-G", "Xcode",
+				"-D", "CMAKE_TOOLCHAIN_FILE=Dependencies/ios-cmake/ios.toolchain.cmake",
+				"-D", "PLATFORM=OS64COMBINED",
+				"-D", "ENABLE_ARC=0",
+				"-D", "DEPLOYMENT_TARGET=12",
 
 				// Setup provisioning in Xcode for any project at least once, and then look for this value in the text of one of the files in ~/Library/MobileDevice/Provisioning Profiles.
-				"-D",
-				"CMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM=FPH36HBUH6",
+				"-D", "CMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM=FPH36HBUH6",
 
-				// This needs to match the iosBundleId key in launch.json.
-				"-D",
-				"BABYLON_NATIVE_PLAYGROUND_IOS_PRODUCT_BUNDLE_IDENTIFIER=com.BabylonNative.Playground.iOS.Andy",
-
-				"-D",
-				"BABYLON_NATIVE_VALIDATION_TESTS_IOS_PRODUCT_BUNDLE_IDENTIFIER=com.BabylonNative.ValidationTests.iOS.Andy"
+				// Must match the iosBundleId keys in launch.json.
+				"-D", "BABYLON_NATIVE_PLAYGROUND_IOS_PRODUCT_BUNDLE_IDENTIFIER=com.BabylonNative.Playground.iOS.Andy",
+				"-D", "BABYLON_NATIVE_VALIDATION_TESTS_IOS_PRODUCT_BUNDLE_IDENTIFIER=com.BabylonNative.ValidationTests.iOS.Andy"
 			],
 			"problemMatcher": [],
 			"group": {
@@ -55,10 +43,8 @@
 			"dependsOn": "macOS CMake",
 			"command": "xcodebuild",
 			"args": [
-				"-project",
-				"build/macOS/BabylonNative.xcodeproj",
-				"-scheme",
-				"Playground",
+				"-project", "build/macOS/BabylonNative.xcodeproj",
+				"-scheme", "Playground",
 				"build"
 			],
 			"problemMatcher": [],
@@ -72,13 +58,10 @@
 			"dependsOn": "iOS CMake",
 			"command": "xcodebuild",
 			"args": [
-				"-project",
-				"build/iOS/BabylonNative.xcodeproj",
-				"-scheme",
-				"Playground",
-				"build",
-				"-sdk",
-				"iphonesimulator"
+				"-project", "build/iOS/BabylonNative.xcodeproj",
+				"-scheme", "Playground",
+				"-sdk", "iphonesimulator",
+				"build"
 			],
 			"problemMatcher": [],
 			"group": {
@@ -91,14 +74,11 @@
 			"dependsOn": "iOS CMake",
 			"command": "xcodebuild",
 			"args": [
-				"-project",
-				"build/iOS/BabylonNative.xcodeproj",
-				"-scheme",
-				"Playground",
-				"build",
-				"-sdk",
-				"iphoneos",
-				"-allowProvisioningUpdates"
+				"-project", "build/iOS/BabylonNative.xcodeproj",
+				"-scheme", "Playground",
+				"-sdk", "iphoneos",
+				"-allowProvisioningUpdates",
+				"build"
 			],
 			"problemMatcher": [],
 			"group": {
