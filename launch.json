@@ -22,20 +22,12 @@
         {
             "name": "iOS Playground",
             "preLaunchTask": "iOS Playground Simulator",
-            "type": "cppdbg",
+            "type": "lldb",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "program": "${workspaceFolder}/build/macOS/Apps/Playground/Debug/Playground.app",
-            "osx": {
-                "MIMode": "lldb",
-                "targetArchitecture": "arm64",
-            },
-            "customLaunchSetupCommands": [
-                {
-                    "text": "-target-attach -n Playground", "description": "Attach to Playground", "ignoreFailures": false
-                }
-            ],
-            "launchCompleteCommand": "exec-continue"
+            "program": "${workspaceFolder}/build/iOS/Apps/Playground/Debug-iphonesimulator/Playground.app",
+            "iosBundleId": "com.BabylonNative.Playground.iOS.Andy",
+            "iosTarget": "last-selected",
         }
     ]
 }
