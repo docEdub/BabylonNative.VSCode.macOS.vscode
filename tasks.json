@@ -3,8 +3,11 @@
   "tasks": [
     {
       "label": "macOS CMake",
+      "options": {
+        "cwd": ".."
+      },
       "command": "cmake",
-      "args": ["-B", "build/macOS", "-G", "Xcode"],
+      "args": ["-B", "BabylonNative/build/macOS", "-G", "Xcode"],
       "group": {
         "kind": "build",
         "isDefault": false
@@ -12,14 +15,17 @@
     },
     {
       "label": "iOS CMake",
+      "options": {
+        "cwd": ".."
+      },
       "command": "cmake",
       "args": [
         "-B",
-        "build/iOS",
+        "BabylonNative/build/iOS",
         "-G",
         "Xcode",
         "-D",
-        "CMAKE_TOOLCHAIN_FILE=Dependencies/ios-cmake/ios.toolchain.cmake",
+        "CMAKE_TOOLCHAIN_FILE=BabylonNative/Dependencies/ios-cmake/ios.toolchain.cmake",
         "-D",
         "PLATFORM=OS64COMBINED",
         "-D",
@@ -48,7 +54,7 @@
       "command": "xcodebuild",
       "args": [
         "-project",
-        "build/macOS/BabylonNative.xcodeproj",
+        "build/macOS/BabylonNative/BabylonNative.xcodeproj",
         "-scheme",
         "Playground",
         "build"
@@ -64,7 +70,7 @@
       "command": "xcodebuild",
       "args": [
         "-project",
-        "build/iOS/BabylonNative.xcodeproj",
+        "build/iOS/BabylonNative/BabylonNative.xcodeproj",
         "-scheme",
         "Playground",
         "-sdk",
@@ -82,7 +88,7 @@
       "command": "xcodebuild",
       "args": [
         "-project",
-        "build/iOS/BabylonNative.xcodeproj",
+        "build/iOS/BabylonNative/BabylonNative.xcodeproj",
         "-scheme",
         "Playground",
         "-sdk",

@@ -9,8 +9,8 @@
       "preLaunchTask": "macOS Playground",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/macOS/Apps/Playground/Debug/Playground.app",
       "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/build/macOS/BabylonNative/Apps/Playground/Debug/Playground.app",
       "osx": {
         "MIMode": "lldb"
       }
@@ -31,7 +31,7 @@
       "type": "lldb",
       "request": "launch",
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/build/iOS/Apps/Playground/Debug-iphonesimulator/Playground.app",
+      "program": "${workspaceFolder}/build/iOS/BabylonNative/Apps/Playground/Debug-iphonesimulator/Playground.app",
       "iosBundleId": "com.BabylonNative.Playground.iOS.Andy",
       "iosTarget": "AE926489-5925-46A1-AE45-2B481ED4C36C"
     },
@@ -41,7 +41,7 @@
       "type": "lldb",
       "request": "launch",
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/build/iOS/Apps/Playground/Debug-iphoneos/Playground.app",
+      "program": "${workspaceFolder}/build/iOS/BabylonNative/Apps/Playground/Debug-iphoneos/Playground.app",
       "iosBundleId": "com.BabylonNative.Playground.iOS.Andy",
       "iosTarget": "00008101-000935CE0E43001E"
     }
