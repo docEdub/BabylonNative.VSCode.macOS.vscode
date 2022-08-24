@@ -27,8 +27,11 @@
         "BabylonNative/build/iOS",
         "-G",
         "Xcode",
+
+        // Subsequent CMake runs will say this variable is unused, but if it's not set then the XCode project gets generated for macOS instead of iOS.
         "-D",
         "CMAKE_TOOLCHAIN_FILE=BabylonNative/Dependencies/ios-cmake/ios.toolchain.cmake",
+
         "-D",
         "PLATFORM=OS64COMBINED",
         "-D",
