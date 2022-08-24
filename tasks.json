@@ -11,6 +11,9 @@
       "group": {
         "kind": "build",
         "isDefault": false
+      },
+      "presentation": {
+        "clear": true
       }
     },
     {
@@ -46,6 +49,9 @@
       "group": {
         "kind": "build",
         "isDefault": false
+      },
+      "presentation": {
+        "clear": true
       }
     },
     {
