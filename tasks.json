@@ -39,7 +39,7 @@
         "-D",
         "DEPLOYMENT_TARGET=12",
 
-        // Setup provisioning in Xcode for any project at least once, and then look for this value in the text of one of the files in ~/Library/MobileDevice/Provisioning Profiles.
+        // Setup provisioning in Xcode for any project at least once and then look for this value in the text of one of the files in ~/Library/MobileDevice/Provisioning Profiles.
         "-D",
         "CMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM=FPH36HBUH6",
 
