@@ -5,7 +5,6 @@
       "label": "macOS CMake",
       "command": "cmake",
       "args": ["-B", "build/macOS", "-G", "Xcode"],
-      "problemMatcher": [],
       "group": {
         "kind": "build",
         "isDefault": false
@@ -38,7 +37,6 @@
         "-D",
         "BABYLON_NATIVE_VALIDATION_TESTS_IOS_PRODUCT_BUNDLE_IDENTIFIER=com.BabylonNative.ValidationTests.iOS.Andy"
       ],
-      "problemMatcher": [],
       "group": {
         "kind": "build",
         "isDefault": false
@@ -55,7 +53,6 @@
         "Playground",
         "build"
       ],
-      "problemMatcher": [],
       "group": {
         "kind": "build",
         "isDefault": true
@@ -74,7 +71,6 @@
         "iphonesimulator",
         "build"
       ],
-      "problemMatcher": [],
       "group": {
         "kind": "build",
         "isDefault": true
@@ -94,7 +90,6 @@
         "-allowProvisioningUpdates",
         "build"
       ],
-      "problemMatcher": [],
       "group": {
         "kind": "build",
         "isDefault": true

@@ -10,11 +10,7 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/build/macOS/Apps/Playground/Debug/Playground.app",
-      "args": [],
-      "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
-      "environment": [],
-      "externalConsole": false,
       "osx": {
         "MIMode": "lldb"
       }
