@@ -3,9 +3,14 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/Dependencies/napi/napi-direct/include",
+                "${workspaceFolder}/Dependencies/napi/napi-direct/include/napi",
+                "${workspaceFolder}/**",
+                "/usr/local/include/node"
             ],
-            "defines": [],
+            "defines": [
+                "NODE_ADDON_API_DISABLE_DEPRECATED"
+            ],
             "macFrameworkPath": [
                 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
             ],
