@@ -11,6 +11,11 @@
       "request": "launch",
       "cwd": "${workspaceFolder}",
       "program": "${workspaceFolder}/build/macOS/BabylonNative/Apps/Playground/Debug/Playground.app",
+      "args": [
+        // "file:///Users/andy/-/code/BabylonNative.VSCode.macOS/playground-scripts/run-playground-id.js"
+        "--playgroundId",
+        "#20OAV9#6274"
+      ],
       "osx": {
         "MIMode": "lldb"
       }
