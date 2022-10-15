@@ -20,7 +20,32 @@
         "MIMode": "lldb"
       }
     },
-
+    {
+      "name": "macOS UnitTests",
+      "preLaunchTask": "macOS UnitTests",
+      "type": "cppdbg",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/build/macOS/BabylonNative/Apps/UnitTests/Debug/UnitTests",
+      "args": [
+      ],
+      "osx": {
+        "MIMode": "lldb"
+      }
+    },
+    {
+      "name": "macOS ValidationTests",
+      "preLaunchTask": "macOS ValidationTests",
+      "type": "cppdbg",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/build/macOS/BabylonNative/Apps/ValidationTests/Debug/ValidationTests.app",
+      "args": [
+      ],
+      "osx": {
+        "MIMode": "lldb"
+      }
+    },
     // The following configurations require the iOS Debug extension by Nisarg Jhaveri.
     // See https://marketplace.visualstudio.com/items?itemName=nisargjhaveri.ios-debug.
     // Change iosBundleId to the id you use for development and change it in the "iOS CMake" task in tasks.json, too.

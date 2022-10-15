@@ -71,6 +71,40 @@
       ],
       "group": {
         "kind": "build",
+        // "isDefault": true
+      }
+    },
+    {
+      "label": "macOS UnitTests",
+      "dependsOn": "macOS CMake",
+      "command": "xcodebuild",
+      "args": [
+        "-project",
+        "build/macOS/BabylonNative/BabylonNative.xcodeproj",
+        "-scheme",
+        "UnitTests",
+        "build",
+        // "-quiet"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "macOS ValidationTests",
+      "dependsOn": "macOS CMake",
+      "command": "xcodebuild",
+      "args": [
+        "-project",
+        "build/macOS/BabylonNative/BabylonNative.xcodeproj",
+        "-scheme",
+        "ValidationTests",
+        "build",
+        // "-quiet"
+      ],
+      "group": {
+        "kind": "build",
         "isDefault": true
       }
     },
@@ -90,7 +124,7 @@
       ],
       "group": {
         "kind": "build",
-        "isDefault": true
+        // "isDefault": true
       }
     },
     {
@@ -110,7 +144,7 @@
       ],
       "group": {
         "kind": "build",
-        "isDefault": true
+        // "isDefault": true
       }
     }
   ]
