@@ -13,8 +13,8 @@
       "program": "${workspaceFolder}/build/macOS/BabylonNative/Apps/Playground/Debug/Playground.app",
       "args": [
         // "file:///Users/andy/-/code/BabylonNative.VSCode.macOS/playground-scripts/run-playground-id.js"
-        "--playgroundId",
-        "#20OAV9#6274"
+        // "--playgroundId",
+        // "#20OAV9#6274"
       ],
       "osx": {
         "MIMode": "lldb"
@@ -35,12 +35,13 @@
     },
     {
       "name": "macOS ValidationTests",
-      "preLaunchTask": "macOS ValidationTests",
+      "preLaunchTask": "macOS Playground",
       "type": "cppdbg",
       "request": "launch",
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/build/macOS/BabylonNative/Apps/ValidationTests/Debug/ValidationTests.app",
+      "program": "${workspaceFolder}/build/macOS/BabylonNative/Apps/Playground/Debug/Playground.app",
       "args": [
+        "app:///Scripts/validation_native.js"
       ],
       "osx": {
         "MIMode": "lldb"
