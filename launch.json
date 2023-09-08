@@ -10,7 +10,7 @@
       "type": "cppdbg",
       "request": "launch",
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/build/macOS/BabylonNative/Apps/Playground/Debug/Playground.app",
+      "program": "${workspaceFolder}/.build/macOS/BabylonNative/Apps/Playground/Debug/Playground.app",
       "args": [
         // "file:///Users/andy/-/code/BabylonNative.VSCode.macOS/playground-scripts/run-playground-id.js"
         // "--playgroundId",
@@ -26,7 +26,7 @@
       "type": "cppdbg",
       "request": "launch",
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/build/macOS/BabylonNative/Apps/UnitTests/Debug/UnitTests",
+      "program": "${workspaceFolder}/.build/macOS/BabylonNative/Apps/UnitTests/Debug/UnitTests",
       "args": [
       ],
       "osx": {
@@ -39,7 +39,7 @@
       "type": "cppdbg",
       "request": "launch",
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/build/macOS/BabylonNative/Apps/Playground/Debug/Playground.app",
+      "program": "${workspaceFolder}/.build/macOS/BabylonNative/Apps/Playground/Debug/Playground.app",
       "args": [
         "app:///Scripts/validation_native.js"
       ],
@@ -62,7 +62,7 @@
       "type": "lldb",
       "request": "launch",
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/build/iOS/BabylonNative/Apps/Playground/Debug-iphonesimulator/Playground.app",
+      "program": "${workspaceFolder}/.build/iOS/BabylonNative/Apps/Playground/Debug-iphonesimulator/Playground.app",
       "iosBundleId": "com.BabylonNative.Playground.iOS.Andy",
       "iosTarget": "AE926489-5925-46A1-AE45-2B481ED4C36C"
     },
@@ -72,7 +72,7 @@
       "type": "lldb",
       "request": "launch",
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/build/iOS/BabylonNative/Apps/Playground/Debug-iphoneos/Playground.app",
+      "program": "${workspaceFolder}/.build/iOS/BabylonNative/Apps/Playground/Debug-iphoneos/Playground.app",
       "iosBundleId": "com.BabylonNative.Playground.iOS.Andy",
       "iosTarget": "00008101-000935CE0E43001E"
     }
