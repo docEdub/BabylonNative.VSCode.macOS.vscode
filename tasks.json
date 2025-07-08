@@ -91,16 +91,7 @@
     {
       "label": "iOS Playground (Simulator)",
       "dependsOn": "iOS CMake",
-      "command": "../scripts/xcodebuild-xcpretty.command",
-      "args": [
-        "-project",
-        ".build/iOS/BabylonNative.xcodeproj",
-        "-scheme",
-        "Playground",
-        "-sdk",
-        "iphonesimulator",
-        "build",
-      ],
+      "command": "./.vscode/scripts/ios-simulator-build.command",
       "group": {
         "kind": "build",
         "isDefault": true
