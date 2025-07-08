@@ -18,35 +18,16 @@
     },
     {
       "label": "iOS CMake",
-      "options": {
-        "cwd": ".."
-      },
       "command": "cmake",
       "args": [
         "-B",
-        "BabylonNative/.build/iOS",
+        ".build/iOS",
+
         "-G",
         "Xcode",
 
         "-D",
         "IOS=ON",
-
-        "-D",
-        "PLATFORM=OS64COMBINED",
-        "-D",
-        "ENABLE_ARC=0",
-        "-D",
-        "DEPLOYMENT_TARGET=12",
-
-        // Setup provisioning in Xcode for any project at least once and then look for this value in the text of one of the files in ~/Library/MobileDevice/Provisioning Profiles.
-        "-D",
-        "CMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM=FPH36HBUH6",
-
-        // Must match the iosBundleId keys in launch.json.
-        "-D",
-        "BABYLON_NATIVE_PLAYGROUND_IOS_PRODUCT_BUNDLE_IDENTIFIER=com.BabylonNative.Playground.iOS.Andy",
-        "-D",
-        "BABYLON_NATIVE_VALIDATION_TESTS_IOS_PRODUCT_BUNDLE_IDENTIFIER=com.BabylonNative.ValidationTests.iOS.Andy"
       ],
       "group": {
         "kind": "build",
@@ -113,7 +94,7 @@
       "command": "../scripts/xcodebuild-xcpretty.command",
       "args": [
         "-project",
-        ".build/iOS/BabylonNative/BabylonNative.xcodeproj",
+        ".build/iOS/BabylonNative.xcodeproj",
         "-scheme",
         "Playground",
         "-sdk",
