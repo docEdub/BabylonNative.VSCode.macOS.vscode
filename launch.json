@@ -62,9 +62,9 @@
       "type": "lldb",
       "request": "launch",
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/.build/iOS/BabylonNative/Apps/Playground/Debug-iphonesimulator/Playground.app",
-      "iosBundleId": "com.BabylonNative.Playground.iOS.Andy",
-      "iosTarget": "AE926489-5925-46A1-AE45-2B481ED4C36C"
+      "program": "${workspaceFolder}/.build/iOS/Apps/Playground/Debug-iphonesimulator/Playground.app",
+      "iosBundleId": "com.BabylonNative.Playground.iOS",
+      "iosTarget": "BD636DFA-F493-4966-A06E-4EDF0E3327FE"
     },
     {
       "name": "iOS Playground (Device)",
