@@ -4,7 +4,22 @@
     {
       "label": "macOS CMake",
       "command": "cmake",
-      "args": ["-B", ".build/macOS", "-G", "Xcode", "-D", "BABYLON_NATIVE_BUILD_APPS=ON", "-D", "CMAKE_POLICY_VERSION_MINIMUM=3.5"],
+      "args": [
+        "-B",
+        ".build/macOS",
+
+        "-G",
+        "Xcode",
+
+        "-D",
+        "BABYLON_NATIVE_BUILD_APPS=ON",
+
+        "-D",
+        "BABYLON_NATIVE_PLUGIN_NATIVEENGINE_WEBP=OFF",
+
+        "-D",
+        "CMAKE_WARN_DEPRECATED=FALSE",
+      ],
       "group": {
         "kind": "build",
         "isDefault": false
@@ -24,6 +39,15 @@
         "Xcode",
 
         "-D",
+        "BABYLON_NATIVE_BUILD_APPS=ON",
+
+        "-D",
+        "BABYLON_NATIVE_PLUGIN_NATIVEENGINE_WEBP=OFF",
+
+        "-D",
+        "CMAKE_WARN_DEPRECATED=FALSE",
+
+        "-D",
         "IOS=ON",
       ],
       "group": {
@@ -36,16 +60,9 @@
     },
     {
       "label": "macOS Playground",
-      "dependsOn": "macOS CMake",
-      "command": "xcodebuild",
-      "args": [
-        "-project",
-        ".build/macOS/BabylonNative/BabylonNative.xcodeproj",
-        "-scheme",
-        "Playground",
-        "build",
-        "-quiet"
-      ],
+      // "dependsOn": "macOS CMake",
+      "command": "./.vscode/scripts/.macos-build.sh",
+      "args": [ "Playground" ],
       "group": {
         "kind": "build",
         // "isDefault": true
@@ -54,24 +71,8 @@
     {
       "label": "macOS UnitTests",
       "dependsOn": "macOS CMake",
-      "command": "./.vscode/scripts/macos-build.command",
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
-    },
-    {
-      "label": "macOS ValidationTests",
-      "dependsOn": "macOS CMake",
-      "command": "xcodebuild",
-      "args": [
-        "-project",
-        ".build/macOS/BabylonNative/BabylonNative.xcodeproj",
-        "-scheme",
-        "ValidationTests",
-        "build",
-        // "-quiet"
-      ],
+      "command": "./.vscode/scripts/.macos-build.sh",
+      "args": [ "UnitTests" ],
       "group": {
         "kind": "build",
         // "isDefault": true
@@ -79,8 +80,19 @@
     },
     {
       "label": "iOS Playground (Simulator)",
-      "--dependsOn": "iOS CMake",
-      "command": "./.vscode/scripts/ios-simulator-build.command",
+      // "dependsOn": "iOS CMake",
+      "command": "./.vscode/scripts/.ios-simulator-build.sh",
+      "args": [ "Playground" ],
+      "group": {
+        "kind": "build",
+        // "isDefault": true
+      }
+    },
+    {
+      "label": "iOS UnitTests (Simulator)",
+      // "dependsOn": "iOS CMake",
+      "command": "./.vscode/scripts/.ios-simulator-build.sh",
+      "args": [ "UnitTests" ],
       "group": {
         "kind": "build",
         // "isDefault": true
@@ -88,7 +100,7 @@
     },
     {
       "label": "iOS Playground (Device)",
-      "dependsOn": "iOS CMake",
+      // "dependsOn": "iOS CMake",
       "command": "xcodebuild",
       "args": [
         "-project",
