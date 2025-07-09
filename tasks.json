@@ -3,11 +3,8 @@
   "tasks": [
     {
       "label": "macOS CMake",
-      "options": {
-        "cwd": ".."
-      },
       "command": "cmake",
-      "args": ["-B", "BabylonNative/.build/macOS", "-G", "Xcode", "-D", "BABYLON_NATIVE_BUILD_APPS=ON", "-D", "CMAKE_POLICY_VERSION_MINIMUM=3.5"],
+      "args": ["-B", ".build/macOS", "-G", "Xcode", "-D", "BABYLON_NATIVE_BUILD_APPS=ON", "-D", "CMAKE_POLICY_VERSION_MINIMUM=3.5"],
       "group": {
         "kind": "build",
         "isDefault": false
@@ -57,18 +54,10 @@
     {
       "label": "macOS UnitTests",
       "dependsOn": "macOS CMake",
-      "command": "xcodebuild",
-      "args": [
-        "-project",
-        ".build/macOS/BabylonNative/BabylonNative.xcodeproj",
-        "-scheme",
-        "UnitTests",
-        "build",
-        // "-quiet"
-      ],
+      "command": "./.vscode/scripts/macos-build.command",
       "group": {
         "kind": "build",
-        // "isDefault": true
+        "isDefault": true
       }
     },
     {
@@ -90,11 +79,11 @@
     },
     {
       "label": "iOS Playground (Simulator)",
-      "dependsOn": "iOS CMake",
+      "--dependsOn": "iOS CMake",
       "command": "./.vscode/scripts/ios-simulator-build.command",
       "group": {
         "kind": "build",
-        "isDefault": true
+        // "isDefault": true
       }
     },
     {

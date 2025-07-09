@@ -26,7 +26,7 @@
       "type": "cppdbg",
       "request": "launch",
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/.build/macOS/BabylonNative/Apps/UnitTests/Debug/UnitTests",
+      "program": "${workspaceFolder}/.build/macOS/Apps/UnitTests/Debug/UnitTests",
       "args": [
       ],
       "osx": {
