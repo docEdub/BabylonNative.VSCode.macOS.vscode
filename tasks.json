@@ -29,7 +29,7 @@
       }
     },
     {
-      "label": "iOS CMake",
+      "label": "iOS CMake (Simulator)",
       "command": "cmake",
       "args": [
         "-B",
@@ -49,6 +49,13 @@
 
         "-D",
         "IOS=ON",
+
+        // Use the simulator version of JavaScriptCore.
+        // Without this, the iOS device version is used, which fails to link.
+        "-D",
+        "JAVASCRIPTCORE_LIBRARY=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/JavaScriptCore.framework",
+
+        "--fresh",
       ],
       "group": {
         "kind": "build",
@@ -66,6 +73,9 @@
       "group": {
         "kind": "build",
         // "isDefault": true
+      },
+      "presentation": {
+        "clear": true
       }
     },
     {
@@ -76,26 +86,35 @@
       "group": {
         "kind": "build",
         // "isDefault": true
+      },
+      "presentation": {
+        "clear": true
       }
     },
     {
       "label": "iOS Playground (Simulator)",
-      // "dependsOn": "iOS CMake",
+      // "dependsOn": "iOS CMake (Simulator)",
       "command": "./.vscode/scripts/.ios-simulator-build.sh",
       "args": [ "Playground" ],
       "group": {
         "kind": "build",
         // "isDefault": true
+      },
+      "presentation": {
+        "clear": true
       }
     },
     {
       "label": "iOS UnitTests (Simulator)",
-      // "dependsOn": "iOS CMake",
+      // "dependsOn": "iOS CMak (Simulator)",
       "command": "./.vscode/scripts/.ios-simulator-build.sh",
       "args": [ "UnitTests" ],
       "group": {
         "kind": "build",
         // "isDefault": true
+      },
+      "presentation": {
+        "clear": true
       }
     },
     {
@@ -116,6 +135,9 @@
       "group": {
         "kind": "build",
         // "isDefault": true
+      },
+      "presentation": {
+        "clear": true
       }
     }
   ]

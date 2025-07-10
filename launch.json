@@ -67,6 +67,16 @@
       "iosTarget": "BD636DFA-F493-4966-A06E-4EDF0E3327FE"
     },
     {
+      "name": "iOS UnitTests (Simulator)",
+      "preLaunchTask": "iOS UnitTests (Simulator)",
+      "type": "lldb",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/.build/iOS/Apps/UnitTests/Debug-iphonesimulator/UnitTests.app",
+      "iosBundleId": "com.BabylonNative.UnitTests.iOS",
+      "iosTarget": "BD636DFA-F493-4966-A06E-4EDF0E3327FE"
+    },
+    {
       "name": "iOS Playground (Device)",
       "preLaunchTask": "iOS Playground (Device)",
       "type": "lldb",

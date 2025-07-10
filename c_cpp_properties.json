@@ -3,10 +3,8 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/Dependencies/napi/napi-direct/include",
-                "${workspaceFolder}/Dependencies/napi/napi-direct/include/napi",
+                "${workspaceFolder}/Core/Graphics/Include/Shared",
                 "${workspaceFolder}/**",
-                "/usr/local/include/node"
             ],
             "defines": [
                 "NODE_ADDON_API_DISABLE_DEPRECATED"
