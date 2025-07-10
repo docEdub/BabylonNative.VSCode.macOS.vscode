@@ -24,6 +24,7 @@
                     "**"
                 ]
             },
+            "compileCommands": ".vscode/.build/compile_commands.json",
             "defines": [
                 "NODE_ADDON_API_DISABLE_DEPRECATED",
                 "NSLog(format, args)"
