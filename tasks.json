@@ -106,7 +106,7 @@
     },
     {
       "label": "iOS UnitTests (Simulator)",
-      // "dependsOn": "iOS CMak (Simulator)",
+      // "dependsOn": "iOS CMake (Simulator)",
       "command": "./.vscode/scripts/.ios-simulator-build.sh",
       "args": [ "UnitTests" ],
       "group": {
