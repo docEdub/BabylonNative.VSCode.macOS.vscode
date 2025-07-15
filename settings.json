@@ -1,5 +1,13 @@
 {
     "C_Cpp.errorSquiggles": "disabled",
+    "[cpp]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[c]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
     "files.associations": {
         "*.mm": "cpp",
         "gsl": "cpp",
