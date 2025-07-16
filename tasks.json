@@ -2,6 +2,18 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Reset .build/iOS directory",
+      "command": "./.vscode/scripts/.ios-reset-build-directory.sh",
+      "group": {
+        "kind": "build",
+      },
+      "presentation": {
+        "clear": true,
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    },
+    {
       "label": "macOS CMake",
       "command": "cmake",
       "args": [
@@ -25,7 +37,7 @@
         "isDefault": false
       },
       "presentation": {
-        "clear": true
+        "clear": true,
       }
     },
     {
@@ -47,6 +59,13 @@
         "-D",
         "CMAKE_WARN_DEPRECATED=FALSE",
 
+        // Disable previews and Swift version to avoid xcodebuild output like ...
+        //  note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'UnitTests' from project 'BabylonNative')
+        "-D",
+        "CMAKE_XCODE_ATTRIBUTE_ENABLE_PREVIEWS=NO",
+        "-D",
+        "CMAKE_XCODE_ATTRIBUTE_SWIFT_VERSION=",
+
         "-D",
         "IOS=ON",
 
@@ -62,7 +81,9 @@
         "isDefault": false
       },
       "presentation": {
-        "clear": true
+        "clear": true,
+        "panel": "shared",
+        "showReuseMessage": false
       }
     },
     {
@@ -114,7 +135,9 @@
         // "isDefault": true
       },
       "presentation": {
-        "clear": true
+        "clear": true,
+        "panel": "shared",
+        "showReuseMessage": false
       }
     },
     {
@@ -139,6 +162,24 @@
       "presentation": {
         "clear": true
       }
-    }
+    },
+    {
+      "label": "iOS UnitTests (Simulator) - rebuild",
+      "dependsOn": [
+        "Reset .build/iOS directory",
+        "iOS CMake (Simulator)",
+        "iOS UnitTests (Simulator)"
+      ],
+      "dependsOrder": "sequence",
+      "command": "echo",
+      "args": [ "Rebuild - done" ],
+      "group": {
+        "kind": "build",
+      },
+      "presentation": {
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    },
   ]
 }

@@ -6,11 +6,11 @@ fi
 TARGET="$1"
 
 # Quiet build.
-# xcodebuild -project .build/iOS/BabylonNative.xcodeproj -scheme $TARGET -sdk iphonesimulator -destination 'arch=arm64,OS=18.5,name=iPhone 16 Pro Max' build -quiet
+xcodebuild -project .build/iOS/BabylonNative.xcodeproj -scheme $TARGET -sdk iphonesimulator -destination 'arch=arm64,OS=18.5,name=iPhone 16 Pro Max' build -quiet
 
 # Use xcpretty.
 XCPRETTY_INHIBIT_WARNINGS=1
-xcodebuild -project .build/iOS/BabylonNative.xcodeproj -scheme $TARGET -sdk iphonesimulator -destination 'arch=arm64,OS=18.5,name=iPhone 16 Pro Max' build | xcpretty
+# xcodebuild -project .build/iOS/BabylonNative.xcodeproj -scheme $TARGET -sdk iphonesimulator -destination 'arch=arm64,OS=18.5,name=iPhone 16 Pro Max' build | xcpretty
 
 # Use xcpretty and generate a compile_commands.json file.
 XCPRETTY_INHIBIT_WARNINGS=1
