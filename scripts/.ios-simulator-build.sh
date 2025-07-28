@@ -13,10 +13,13 @@ xcodebuild -project .build/iOS/BabylonNative.xcodeproj -scheme $TARGET -sdk ipho
 
 # TODO: If exit code is 0 then echo ** BUILD SUCCEEDED **
 # If exit code is not 0 then echo ** BUILD FAILED **
+echo ""
 if [ $? -eq 0 ]; then
   echo "** BUILD SUCCEEDED **"
+  echo ""
 else
   echo "** BUILD FAILED **"
+  echo ""
   exit 1
 fi
 
