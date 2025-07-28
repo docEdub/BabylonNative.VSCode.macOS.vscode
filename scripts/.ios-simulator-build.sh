@@ -5,6 +5,9 @@ if [ -z "$1" ]; then
 fi
 TARGET="$1"
 
+# Replace all BX_CONFIG_DEBUG=1 with BX_CONFIG_DEBUG=0 in all .pbxproj files in .build/iOS folder.
+find .build/iOS -name "*.pbxproj" -type f -exec sed -i '' 's/BX_CONFIG_DEBUG=1/BX_CONFIG_DEBUG=0/g' {} \;
+
 # Quiet build.
 xcodebuild -project .build/iOS/BabylonNative.xcodeproj -scheme $TARGET -sdk iphonesimulator -destination 'arch=arm64,OS=18.5,name=iPhone 16 Pro Max' build -quiet
 
